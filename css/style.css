@@ -1,0 +1,180 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  font-family: 'roboto-font', sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  color: #fff;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.container {
+  max-width: 1440px;
+  height: 1133px;
+  margin: 0 auto;
+  background-image: url(/img/Background.png);
+  background-size: cover;
+  
+}
+
+.menu {
+  position: relative;
+}
+
+.menu__title {
+  margin: 0 0 6px 0;
+  padding: 125px 0 0 103px;
+  font-size: 53px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.menu__description {
+  padding: 0 0 0 107px;
+  margin: 0 0 55px 0;
+  font-size: 18px;
+  letter-spacing: 0.6px;
+}
+
+.menu-list {
+  padding-left: 103px;
+  margin-bottom: 108px;
+  list-style-type: none;
+}
+
+.menu-list__item {
+  max-width: 250px;
+  padding-left: 47px;
+  font-size: 50px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  cursor: pointer;
+  transition: color 0.6s;
+}
+
+.menu-list__item:hover {
+  color: #D62B2E;
+}
+
+.menu-list-romb {
+  background-image: url(/img/Rectangle\ 2.svg);
+  background-repeat: no-repeat;
+  background-position-y: 22px;
+}
+
+
+.button {
+  margin-left: 102px;
+  margin-bottom: 305px;
+  font-size: 32px;
+  padding: 28px 88px;
+  background-color: #D62B2E;
+  color: #fff;
+  border-radius: 10px;
+  border: none; 
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.button:hover {
+  font-size: 33px;
+  box-shadow: 10px 10px 10px 10px rgba(0,0,0,0.2);
+}
+
+.menu-img {
+  position: absolute;
+  top: 45.8%;
+  left: 42.8%;
+
+}
+
+.menu-img__card-one {
+  position: relative;
+  z-index: 2;
+  left: 200px;
+  rotate: 50deg;
+}
+
+.menu-img__card-two {
+  position: relative;
+  top: 30px;
+  left: 35px;
+  z-index: 3;
+}
+
+.cotainer-game {
+  display: flex;
+  height: 100%;
+}
+
+.game {
+  padding-top: 20px;
+  margin: auto auto;
+  text-align: center;
+  max-width: 800px;
+  
+}
+
+.container-card {
+  display: inline-block;
+  height: 350px;
+  width: 222px;
+  padding-top: 5px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+  background-color: transparent;
+  perspective: 1000px; 
+}
+
+.container-card__card {
+  margin-left: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.inner-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.card-shirt,
+.card-bag {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.card-shirt__image {
+  cursor: pointer;
+  transition: translateY 1s, transform 1s;
+}
+
+.card-shirt__image:hover {
+  transform: translateY(10px) rotate(-3deg);
+}
+
+.click-button {
+  transform: rotateY(180deg);
+} 
+
+.card-bag {
+  transform: rotateY(180deg);
+}
