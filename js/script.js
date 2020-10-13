@@ -83,6 +83,9 @@ function createCard(level){
   innerCard.appendChild(cardBack);
   card.appendChild(image);
   cardBack.appendChild(bagCard);
+  card.onmouseover = function(event) {
+    card.classList.add('active');
+  }
 }
 
 function createBagCard() {
