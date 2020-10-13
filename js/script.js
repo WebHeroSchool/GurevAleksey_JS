@@ -30,7 +30,7 @@ function gameHardLevel() {
 
 function newGame() {
   menu.classList.add('hidden');
-  cotainerGame.classList.add('cotainer-game');
+  cotainerGame.classList.add('container-game');
   game.addEventListener('click',e => clickCard (e.target)); 
   game.classList.add('game');
   switch (level) {

@@ -4,6 +4,7 @@
 
 html,
 body {
+  height: 100%;
   margin: 0;
   font-family: 'roboto-font', sans-serif;
   font-size: 16px;
@@ -21,9 +22,14 @@ p {
 }
 
 .container {
-  height: 1024px;
+  height: 100%;
   background-image: url(/img/Background.png);
   background-size: cover;
+}
+
+.container-game {
+  display: flex;
+  height: 100%;
 }
 
 .menu {
@@ -238,6 +244,7 @@ p {
   }
   
   .menu__description {
+    max-width: 600px;
     padding-left: 50px;
     font-size: 18px;
     letter-spacing: 0.6px;
@@ -250,18 +257,30 @@ p {
 }
 
 @media (max-width: 727px) {
-  .container {
-    width: 100%;
+  .container-game {
+    display: flex;
     height: 100%;
-    background-image: url(/img/Background.png);
-    background-size: cover;
   }
+  
   .game {
     padding-top: 10px;
     margin: auto auto;
     text-align: center;
     max-width: 500px;
     height: 100%;
+  }
+
+  .menu__title {
+    padding-top: 30px;
+    padding-left: 50px;
+    font-size: 26px;
+  }
+  
+  .menu__description {
+    max-width: 500px;
+    padding-left: 50px;
+    font-size: 18px;
+    letter-spacing: 0.6px;
   }
 }
 
@@ -273,6 +292,12 @@ p {
     background-image: url(/img/Background.png);
     background-size: cover;
   }
+
+  .container-game {
+    display: flex;
+    height: 100%;
+  }
+
 
   .menu {
     position: relative;
