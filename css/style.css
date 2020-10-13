@@ -21,16 +21,14 @@ p {
 }
 
 .container {
-  max-width: 1440px;
-  height: 1133px;
-  margin: 0 auto;
+  height: 1024px;
   background-image: url(/img/Background.png);
   background-size: cover;
-  
 }
 
 .menu {
   position: relative;
+  max-width: 1440px;
 }
 
 .menu__title {
@@ -76,8 +74,8 @@ p {
 
 
 .button {
+  margin-bottom: 50px;
   margin-left: 102px;
-  margin-bottom: 305px;
   font-size: 32px;
   padding: 28px 88px;
   background-color: #D62B2E;
@@ -95,9 +93,8 @@ p {
 
 .menu-img {
   position: absolute;
-  top: 45.8%;
+  top: 61%;
   left: 42.8%;
-
 }
 
 .menu-img__card-one {
@@ -120,11 +117,14 @@ p {
 }
 
 .game {
-  padding-top: 20px;
+  padding-top: 10px;
   margin: auto auto;
   text-align: center;
   max-width: 800px;
-  
+}
+
+.game-hard {
+  max-width: 1300px;
 }
 
 .container-card {
@@ -142,28 +142,30 @@ p {
 .container-card__card {
   margin-left: 10px;
   margin-right: 10px;
-  cursor: pointer;
 }
+
 
 .inner-card {
   position: relative;
   width: 100%;
   height: 100%;
   text-align: center;
+  cursor: pointer;
   transition: transform 0.8s;
   transform-style: preserve-3d;
 }
+
 
 .card-shirt,
 .card-bag {
   position: absolute;
   width: 100%;
   height: 100%;
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
 
 .card-shirt__image {
-  cursor: pointer;
   transition: translateY 1s, transform 1s;
 }
 
@@ -177,4 +179,142 @@ p {
 
 .card-bag {
   transform: rotateY(180deg);
+}
+
+
+@media (max-width: 1439px) {
+  .menu-img {
+    height: 300px;
+    width: 700px;
+    position: absolute;
+    top: 65%;
+    left:0;
+    right: 0;
+    margin: 0 auto;
+  }
+}
+
+
+@media (max-width: 1220px) {
+  .container {
+    width: 100%;
+    height: 100%;
+    background-image: url(/img/Background.png);
+    background-size: cover;
+  }
+
+  .game {
+      padding-top: 10px;
+      margin: auto auto;
+      text-align: center;
+      width: 800px;
+  }
+
+  .menu-img {
+    height: 300px;
+    width: 700px;
+    position: absolute;
+    top: 33%;
+    left:0;
+    right: 0;
+    margin: 0 auto;
+  }
+
+  .game {
+    padding-top: 10px;
+    margin: auto auto;
+    text-align: center;
+    max-width: 800px;
+    height: 100%;
+  }
+}
+
+@media (max-width: 1150px) {
+  
+  .menu__title {
+    padding-top: 30px;
+    padding-left: 50px;
+    font-size: 26px;
+  }
+  
+  .menu__description {
+    padding-left: 50px;
+    font-size: 18px;
+    letter-spacing: 0.6px;
+  }
+
+
+  .menu-img {
+    display: none;
+  }
+}
+
+@media (max-width: 727px) {
+  .container {
+    width: 100%;
+    height: 100%;
+    background-image: url(/img/Background.png);
+    background-size: cover;
+  }
+  .game {
+    padding-top: 10px;
+    margin: auto auto;
+    text-align: center;
+    max-width: 500px;
+    height: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+
+  .container {
+    width: 500px;
+    height: 100%;
+    background-image: url(/img/Background.png);
+    background-size: cover;
+  }
+
+  .menu {
+    position: relative;
+  }
+
+  .menu__title {
+    padding-top: 30px;
+    padding-left: 50px;
+    font-size: 26px;
+  }
+  
+  .menu__description {
+    padding-left: 50px;
+    font-size: 18px;
+    letter-spacing: 0.6px;
+  }
+  
+  .menu-list__item {
+    max-width: 250px;
+    padding-left: 47px;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    cursor: pointer;
+    transition: color 0.6s;
+  }
+
+  .menu-list-romb {
+    background-image: url(/img/Rectangle\ 2.svg);
+    background-repeat: no-repeat;
+    background-position-y: 10px;
+  }
+
+  .button {
+    margin-left: 50px;
+  }  
+
+  .game {
+    padding-top: 10px;
+    margin: auto auto;
+    text-align: center;
+    max-width: 200px;
+    height: 100%;
+  }
 }
