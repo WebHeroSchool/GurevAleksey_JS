@@ -1,7 +1,6 @@
+let testResult = {};
 let level = 3;
-let checkBagCard = 1;
 let arrayCard = [];
-let arrayCardBag = [];
 let bag = "/img/bagcard.png";
 let noBag = "/img/gameover.png";
 let easy = document.getElementById('easy');
@@ -41,14 +40,13 @@ function newGame() {
     main.classList.add('small-card');
     game.classList.add('width-small');
   }
-  do {
-    arrayCard = [];
-    arrayCardBag = [];
-    for (i=0; i < level; i++){
-      arrayCardBag.push(createBagCard());
-    }
-  } while (!arrayCard.includes(bag));
-  arrayCardBag.forEach(element => createCard(element)) 
+
+  for (i = 0; i < level; i++){
+     createBackCard();
+  }
+  let randomIndex = Math.floor(Math.random() * level);
+  arrayCard[randomIndex].src = bag;
+  arrayCard.forEach(element => createCard(element));
 }
 
 function createCard(element){
@@ -84,19 +82,12 @@ function createCard(element){
   }
 }
 
-function createBagCard() {
-  let bagCard = document.createElement("img");
-  let card = Math.random() > .1 ? noBag:bag;
-  if ((card == bag) & (checkBagCard == 1)) {
-    bagCard.src = bag;
-    arrayCard.push(bag);
-    checkBagCard = 0;
-  } else {
-    bagCard.src = noBag;
-    arrayCard.push(noBag);
-  }
-  bagCard.id = 'backcard';
-  return bagCard
+function createBackCard() {
+  let backCard = document.createElement("img"); 
+  backCard.src = noBag;
+  backCard.id = 'backcard';
+  arrayCard.push(backCard);
+  return backCard
 }
 
 function clickCard (card) {
