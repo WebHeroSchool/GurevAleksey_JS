@@ -48,7 +48,6 @@ function newGame() {
       arrayCardBag.push(createBagCard());
     }
   } while (!arrayCard.includes(bag));
-  console.log(arrayCardBag);
   arrayCardBag.forEach(element => createCard(element)) 
 }
 
