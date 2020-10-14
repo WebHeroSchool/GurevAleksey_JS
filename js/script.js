@@ -1,6 +1,7 @@
 let level = 3;
 let checkBagCard = 1;
 let arrayCard = [];
+let arrayCardBag = [];
 let bag = "/img/bagcard.png";
 let noBag = "/img/gameover.png";
 let easy = document.getElementById('easy');
@@ -40,15 +41,18 @@ function newGame() {
     main.classList.add('small-card');
     game.classList.add('width-small');
   }
- 
   do {
+    arrayCard = [];
+    arrayCardBag = [];
     for (i=0; i < level; i++){
-      createCard();
+      arrayCardBag.push(createBagCard());
     }
-  } while (!arrayCard.includes(bag)); 
+  } while (!arrayCard.includes(bag));
+  console.log(arrayCardBag);
+  arrayCardBag.forEach(element => createCard(element)) 
 }
 
-function createCard(){
+function createCard(element){
   let containerCard = document.createElement('div');
   containerCard.classList.add('container-card');
   containerCard.id = 'oneCard';
@@ -68,7 +72,7 @@ function createCard(){
   let cardBack = document.createElement("div");
   cardBack.classList.add('card-bag');
 
-  let bagCard = createBagCard();
+  let bagCard = element;
 
   game.appendChild(containerCard);
   containerCard.appendChild(innerCard)
@@ -83,9 +87,7 @@ function createCard(){
 
 function createBagCard() {
   let bagCard = document.createElement("img");
-  let cards = [bag,noBag];
-  let randomIndex = Math.floor(Math.random() * 2);
-  let card = cards[randomIndex];
+  let card = Math.random() > .1 ? noBag:bag;
   if ((card == bag) & (checkBagCard == 1)) {
     bagCard.src = bag;
     arrayCard.push(bag);
