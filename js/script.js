@@ -1,28 +1,31 @@
-let level = 'easy';
+let level = 3;
+let checkBagCard = 1;
+let arrayCard = [];
+let bag = "/img/bagcard.png";
+let noBag = "/img/gameover.png";
 let easy = document.getElementById('easy');
 let medium = document.getElementById('medium');
 let hard = document.getElementById('hard');
 let clickButtom = document.getElementById('startGame')
-let contanerGame = document.getElementById('containerGame');
 let game = document.getElementById('game')
-let clickCheck = 0;
+let containerGame = document.getElementById('cotainerGame');
  
 function gameEasyLevel() {
-  level = 'easy';
+  level = 3;
   easy.classList.add('menu-list-romb');
   medium.classList.remove('menu-list-romb');
   hard.classList.remove('menu-list-romb');
 }
 
 function gameMediumLevel() {
-  level = 'medium';
+  level = 6;
   easy.classList.remove('menu-list-romb');
   medium.classList.add('menu-list-romb');
   hard.classList.remove('menu-list-romb');
 }
 
 function gameHardLevel() {
-  level = 'hard';
+  level = 10;
   easy.classList.remove('menu-list-romb');
   medium.classList.remove('menu-list-romb');
   hard.classList.add('menu-list-romb');
@@ -30,32 +33,22 @@ function gameHardLevel() {
 
 function newGame() {
   menu.classList.add('hidden');
-  cotainerGame.classList.add('container-game');
-  game.addEventListener('click',e => clickCard (e.target)); 
+  containerGame.classList.add('container-game');
   game.classList.add('game');
-  switch (level) {
-    case 'easy' : 
-      for (i=0; i< 3; i++){
-        createCard(level);
-      }
-      break;
-    case 'medium' : 
-      for (i=0; i< 6; i++){
-        createCard(level);
-      }
-      break;
-    case 'hard' : 
-      for (i=0; i< 10; i++){
-        createCard(level);
-      }
-      break;    
+  if (level < 10) {
+    let main = document.getElementById('main');
+    main.classList.add('small-card');
+    game.classList.add('width-small');
   }
+ 
+  do {
+    for (i=0; i < level; i++){
+      createCard();
+    }
+  } while (!arrayCard.includes(bag)); 
 }
 
-function createCard(level){
-  if (level == 'hard'){
-    game.classList.add('game-hard');
-  }
+function createCard(){
   let containerCard = document.createElement('div');
   containerCard.classList.add('container-card');
   containerCard.id = 'oneCard';
@@ -90,34 +83,34 @@ function createCard(level){
 
 function createBagCard() {
   let bagCard = document.createElement("img");
-  switch (level) {
-    case 'easy' : 
-      bagCard.src = Math.random() > .7 ?  "/img/gameover.png": "/img/bagcard.png";
-      break;
-    case 'medium' : 
-      bagCard.src = Math.random() > .5 ?  "/img/gameover.png": "/img/bagcard.png";
-      break;
-    case 'hard' : 
-      bagCard.src = Math.random() > .3 ?  "/img/gameover.png": "/img/bagcard.png";
-      break;    
-  } 
+  let cards = [bag,noBag];
+  let randomIndex = Math.floor(Math.random() * 2);
+  let card = cards[randomIndex];
+  if ((card == bag) & (checkBagCard == 1)) {
+    bagCard.src = bag;
+    arrayCard.push(bag);
+    checkBagCard = 0;
+  } else {
+    bagCard.src = noBag;
+    arrayCard.push(noBag);
+  }
   bagCard.id = 'backcard';
   return bagCard
 }
 
 function clickCard (card) {
   let click = card.parentNode.parentNode;
-  if (click.id == 'twoCard'){
-    click.classList.add ('click-button');
-    click.addEventListener('click', goToMenu);
+    if (click.id == 'twoCard'){
+      click.classList.add ('click-button');
+      click.addEventListener('click', goToMenu);
+  }
+  function goToMenu (){
+    location.reload();
   }
 }
 
-function goToMenu (){
-  location.reload();
-}
-
 gameEasyLevel();
+game.addEventListener('click',e => clickCard (e.target));
 easy.addEventListener('click',gameEasyLevel);
 medium.addEventListener('click',gameMediumLevel);
 hard.addEventListener('click',gameHardLevel);

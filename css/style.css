@@ -4,7 +4,6 @@
 
 html,
 body {
-  height: 100%;
   margin: 0;
   font-family: 'roboto-font', sans-serif;
   font-size: 16px;
@@ -22,13 +21,16 @@ p {
 }
 
 .container {
-  height: 100%;
+  width: 1440;
+  height: 1024;
+  margin: 0 auto;
   background-image: url(/img/Background.png);
   background-size: cover;
 }
 
 .container-game {
   display: flex;
+  flex-wrap: wrap;
   height: 100%;
 }
 
@@ -100,7 +102,10 @@ p {
 .menu-img {
   position: absolute;
   top: 61%;
-  left: 42.8%;
+  left:0;
+  right: 40px;
+  width: 700px;
+  margin-left: auto ;
 }
 
 .menu-img__card-one {
@@ -118,7 +123,6 @@ p {
 }
 
 .cotainer-game {
-  display: flex;
   height: 100%;
 }
 
@@ -126,7 +130,7 @@ p {
   padding-top: 10px;
   margin: auto auto;
   text-align: center;
-  max-width: 800px;
+  max-width: 1200px;
 }
 
 .game-hard {
@@ -188,158 +192,260 @@ p {
 }
 
 
-@media (max-width: 1439px) {
-  .menu-img {
-    height: 300px;
-    width: 700px;
-    position: absolute;
-    top: 65%;
-    left:0;
-    right: 0;
-    margin: 0 auto;
+
+
+@media (min-width: 1213px) {
+  .container {
+    max-width: 1440px;
+    height: 1024px;
+  }
+  
+  .container-game {
+    display: flex;
+    height: 100%;
+  }
+
+  .game {
+    max-width: 1300px;
+  }
+
+  .width-small {
+    max-width: 800px;
   }
 }
 
 
-@media (max-width: 1220px) {
+
+@media (min-width: 731px) and (max-width: 1212px) {
+  .container {
+    min-width: 727px;
+    height: 100%;
+  }
+
+  .small-card {
+    height: 100vh;
+  }
+  
+  .container-game {
+    display: flex;
+    height: 100%;
+  }
+
+  .game {
+    max-width: 1300px;
+  }
+
+  .width-small {
+    max-width: 800px;
+  }
+
+  .menu-img {
+   display: none;
+  }
+  .menu {
+    height: 100vh;
+  }
+
+  .menu__title {
+    font-size: 48px;
+  }
+
+  .menu__description {
+    max-width: 720px;
+  }
+} 
+
+@media (min-width: 521px) and (max-width: 730px) {
   .container {
     width: 100%;
     height: 100%;
-    background-image: url(/img/Background.png);
-    background-size: cover;
   }
-
-  .game {
-      padding-top: 10px;
-      margin: auto auto;
-      text-align: center;
-      width: 800px;
-  }
-
-  .menu-img {
-    height: 300px;
-    width: 700px;
-    position: absolute;
-    top: 33%;
-    left:0;
-    right: 0;
-    margin: 0 auto;
-  }
-
-  .game {
-    padding-top: 10px;
-    margin: auto auto;
-    text-align: center;
-    max-width: 800px;
+  
+  .container-game {
     height: 100%;
   }
-}
+  .game {
+    padding-top: 10px;
+    margin: 0 auto;
+    text-align: center;
+    width: 310px;
+  }
 
-@media (max-width: 1150px) {
-  
+  .menu {
+    height: 100vh;
+  }
+
   .menu__title {
-    padding-top: 30px;
-    padding-left: 50px;
-    font-size: 26px;
-  }
-  
-  .menu__description {
-    max-width: 600px;
-    padding-left: 50px;
-    font-size: 18px;
-    letter-spacing: 0.6px;
+    font-size: 35px;
   }
 
+  .menu__description {
+    max-width: 500px;
+  }
 
   .menu-img {
     display: none;
-  }
-}
+   }
 
-@media (max-width: 727px) {
-  .container-game {
-    display: flex;
-    height: 100%;
-  }
-  
-  .game {
-    padding-top: 10px;
-    margin: auto auto;
-    text-align: center;
-    max-width: 500px;
-    height: 100%;
-  }
-
-  .menu__title {
-    padding-top: 30px;
-    padding-left: 50px;
-    font-size: 26px;
-  }
-  
-  .menu__description {
-    max-width: 500px;
-    padding-left: 50px;
-    font-size: 18px;
-    letter-spacing: 0.6px;
-  }
-}
-
-@media (max-width: 500px) {
-
-  .container {
-    width: 500px;
-    height: 100%;
-    background-image: url(/img/Background.png);
-    background-size: cover;
-  }
-
-  .container-game {
-    display: flex;
-    height: 100%;
-  }
-
-
-  .menu {
-    position: relative;
-  }
-
-  .menu__title {
-    padding-top: 30px;
-    padding-left: 50px;
-    font-size: 26px;
-  }
-  
-  .menu__description {
-    padding-left: 50px;
-    font-size: 18px;
-    letter-spacing: 0.6px;
-  }
-  
-  .menu-list__item {
+   .menu-list__item {
     max-width: 250px;
     padding-left: 47px;
-    font-size: 30px;
+    font-size: 35px;
     font-weight: bold;
     margin-bottom: 16px;
     cursor: pointer;
     transition: color 0.6s;
   }
+  
 
   .menu-list-romb {
     background-image: url(/img/Rectangle\ 2.svg);
     background-repeat: no-repeat;
-    background-position-y: 10px;
+    background-position-y: 12px;
+  }
+  
+  .button {
+    margin-bottom: 50px;
+    margin-left: 102px;
+    font-size: 27px;
+    padding: 18px 58px;
+  }
+} 
+
+
+@media (min-width:320px) and (max-width:520px) {
+  .container {
+    height: 100%;
+  }
+  
+  .container-game {
+    display: flex;
+    margin: auto auto;
+    width: 320px;
+    height: 100%;
   }
 
-  .button {
-    margin-left: 50px;
-  }  
+  .menu {
+    height: 100vh;
+  }
 
   .game {
     padding-top: 10px;
-    margin: auto auto;
     text-align: center;
-    max-width: 200px;
+    width: 310px;
+  }
+
+  .menu-img {
+    display: none;
+   }
+
+  .menu__title {
+    padding-left: 20px;
+    padding-right: 10px;
+    font-size: 25px;
+    max-width: 450px;
+  }
+
+  .menu__description {
+    padding-left: 20px;
+    padding-right: 10px;
+    max-width: 450px;
+  }
+
+  .menu-list {
+    padding-left: 20px;
+  }
+
+  .menu-list__item {
+    max-width: 250px;
+    padding-left: 47px;
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    cursor: pointer;
+    transition: color 0.6s;
+  }
+  
+
+  .menu-list-romb {
+    background-image: url(/img/Rectangle\ 2.svg);
+    background-repeat: no-repeat;
+    background-position-y: 5px;
+  }
+  
+  .button {
+    margin-bottom: 50px;
+    margin-left: 40px;
+    font-size: 27px;
+    padding: 18px 58px;
+  }
+}
+
+@media (max-width:319px) {
+  .container {
     height: 100%;
+    width: 320px;
+  }
+  
+  .container-game {
+    display: flex;
+    margin: auto auto;
+    width: 320px;
+    height: 100%;
+  }
+
+  .menu {
+    height: 100vh;
+  }
+
+  .game {
+    padding-top: 10px;
+    text-align: center;
+    width: 310px;
+  }
+
+  .menu-img {
+    display: none;
+   }
+
+  .menu__title {
+    padding-left: 20px;
+    padding-right: 10px;
+    font-size: 25px;
+    max-width: 450px;
+  }
+
+  .menu__description {
+    padding-left: 20px;
+    padding-right: 10px;
+    max-width: 450px;
+  }
+
+  .menu-list {
+    padding-left: 20px;
+  }
+
+  .menu-list__item {
+    max-width: 250px;
+    padding-left: 47px;
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    cursor: pointer;
+    transition: color 0.6s;
+  }
+  
+
+  .menu-list-romb {
+    background-image: url(/img/Rectangle\ 2.svg);
+    background-repeat: no-repeat;
+    background-position-y: 5px;
+  }
+  
+  .button {
+    margin-bottom: 50px;
+    margin-left: 40px;
+    font-size: 27px;
+    padding: 18px 58px;
   }
 }
