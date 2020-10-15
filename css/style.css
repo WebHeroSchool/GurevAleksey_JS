@@ -1,0 +1,451 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  font-family: 'roboto-font', sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  color: #fff;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.container {
+  width: 1440;
+  height: 1024;
+  margin: 0 auto;
+  background-image: url(/img/Background.png);
+  background-size: cover;
+}
+
+.container-game {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+}
+
+.menu {
+  position: relative;
+  max-width: 1440px;
+}
+
+.menu__title {
+  margin: 0 0 6px 0;
+  padding: 125px 0 0 103px;
+  font-size: 53px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.menu__description {
+  padding: 0 0 0 107px;
+  margin: 0 0 55px 0;
+  font-size: 18px;
+  letter-spacing: 0.6px;
+}
+
+.menu-list {
+  padding-left: 103px;
+  margin-bottom: 108px;
+  list-style-type: none;
+}
+
+.menu-list__item {
+  max-width: 250px;
+  padding-left: 47px;
+  font-size: 50px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  cursor: pointer;
+  transition: color 0.6s;
+}
+
+.menu-list__item:hover {
+  color: #D62B2E;
+}
+
+.menu-list-romb {
+  background-image: url(/img/Rectangle\ 2.svg);
+  background-repeat: no-repeat;
+  background-position-y: 22px;
+}
+
+
+.button {
+  margin-bottom: 50px;
+  margin-left: 102px;
+  font-size: 32px;
+  padding: 28px 88px;
+  background-color: #D62B2E;
+  color: #fff;
+  border-radius: 10px;
+  border: none; 
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.button:hover {
+  font-size: 33px;
+  box-shadow: 10px 10px 10px 10px rgba(0,0,0,0.2);
+}
+
+.menu-img {
+  position: absolute;
+  top: 61%;
+  left:0;
+  right: 40px;
+  width: 700px;
+  margin-left: auto ;
+}
+
+.menu-img__card-one {
+  position: relative;
+  z-index: 2;
+  left: 200px;
+  rotate: 50deg;
+}
+
+.menu-img__card-two {
+  position: relative;
+  top: 30px;
+  left: 35px;
+  z-index: 3;
+}
+
+.cotainer-game {
+  height: 100%;
+}
+
+.game {
+  padding-top: 10px;
+  margin: auto auto;
+  text-align: center;
+  max-width: 1200px;
+}
+
+.game-hard {
+  max-width: 1300px;
+}
+
+.container-card {
+  display: inline-block;
+  height: 350px;
+  width: 222px;
+  padding-top: 5px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+  background-color: transparent;
+  perspective: 1000px; 
+}
+
+.container-card__card {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+
+.inner-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+
+.card-shirt,
+.card-bag {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.active {
+  transition: translateY 1s, transform 1s;
+}
+
+.active:hover {
+  transform: translateY(10px) rotate(-3deg);
+}
+
+.click-button {
+  transform: rotateY(180deg);
+} 
+
+.card-bag {
+  transform: rotateY(180deg);
+}
+
+
+
+
+@media (min-width: 1213px) {
+  .container {
+    max-width: 1440px;
+    height: 1024px;
+  }
+  
+  .container-game {
+    display: flex;
+    height: 100%;
+  }
+
+  .game {
+    max-width: 1300px;
+  }
+
+  .width-small {
+    max-width: 800px;
+  }
+}
+
+
+
+@media (min-width: 731px) and (max-width: 1212px) {
+  .container {
+    min-width: 727px;
+    height: 100%;
+  }
+
+  .small-card {
+    height: 100vh;
+  }
+  
+  .container-game {
+    display: flex;
+    height: 100%;
+  }
+
+  .game {
+    max-width: 1300px;
+  }
+
+  .width-small {
+    max-width: 800px;
+  }
+
+  .menu-img {
+   display: none;
+  }
+  .menu {
+    height: 100vh;
+  }
+
+  .menu__title {
+    font-size: 48px;
+  }
+
+  .menu__description {
+    max-width: 720px;
+  }
+} 
+
+@media (min-width: 521px) and (max-width: 730px) {
+  .container {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .container-game {
+    height: 100%;
+  }
+  .game {
+    padding-top: 10px;
+    margin: 0 auto;
+    text-align: center;
+    width: 310px;
+  }
+
+  .menu {
+    height: 100vh;
+  }
+
+  .menu__title {
+    font-size: 35px;
+  }
+
+  .menu__description {
+    max-width: 500px;
+  }
+
+  .menu-img {
+    display: none;
+   }
+
+   .menu-list__item {
+    max-width: 250px;
+    padding-left: 47px;
+    font-size: 35px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    cursor: pointer;
+    transition: color 0.6s;
+  }
+  
+
+  .menu-list-romb {
+    background-image: url(/img/Rectangle\ 2.svg);
+    background-repeat: no-repeat;
+    background-position-y: 12px;
+  }
+  
+  .button {
+    margin-bottom: 50px;
+    margin-left: 102px;
+    font-size: 27px;
+    padding: 18px 58px;
+  }
+} 
+
+
+@media (min-width:320px) and (max-width:520px) {
+  .container {
+    height: 100%;
+  }
+  
+  .container-game {
+    display: flex;
+    margin: auto auto;
+    width: 320px;
+    height: 100%;
+  }
+
+  .menu {
+    height: 100vh;
+  }
+
+  .game {
+    padding-top: 10px;
+    text-align: center;
+    width: 310px;
+  }
+
+  .menu-img {
+    display: none;
+   }
+
+  .menu__title {
+    padding-left: 20px;
+    padding-right: 10px;
+    font-size: 25px;
+    max-width: 450px;
+  }
+
+  .menu__description {
+    padding-left: 20px;
+    padding-right: 10px;
+    max-width: 450px;
+  }
+
+  .menu-list {
+    padding-left: 20px;
+  }
+
+  .menu-list__item {
+    max-width: 250px;
+    padding-left: 47px;
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    cursor: pointer;
+    transition: color 0.6s;
+  }
+  
+
+  .menu-list-romb {
+    background-image: url(/img/Rectangle\ 2.svg);
+    background-repeat: no-repeat;
+    background-position-y: 5px;
+  }
+  
+  .button {
+    margin-bottom: 50px;
+    margin-left: 40px;
+    font-size: 27px;
+    padding: 18px 58px;
+  }
+}
+
+@media (max-width:319px) {
+  .container {
+    height: 100%;
+    width: 320px;
+  }
+  
+  .container-game {
+    display: flex;
+    margin: auto auto;
+    width: 320px;
+    height: 100%;
+  }
+
+  .menu {
+    height: 100vh;
+  }
+
+  .game {
+    padding-top: 10px;
+    text-align: center;
+    width: 310px;
+  }
+
+  .menu-img {
+    display: none;
+   }
+
+  .menu__title {
+    padding-left: 20px;
+    padding-right: 10px;
+    font-size: 25px;
+    max-width: 450px;
+  }
+
+  .menu__description {
+    padding-left: 20px;
+    padding-right: 10px;
+    max-width: 450px;
+  }
+
+  .menu-list {
+    padding-left: 20px;
+  }
+
+  .menu-list__item {
+    max-width: 250px;
+    padding-left: 47px;
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    cursor: pointer;
+    transition: color 0.6s;
+  }
+  
+
+  .menu-list-romb {
+    background-image: url(/img/Rectangle\ 2.svg);
+    background-repeat: no-repeat;
+    background-position-y: 5px;
+  }
+  
+  .button {
+    margin-bottom: 50px;
+    margin-left: 40px;
+    font-size: 27px;
+    padding: 18px 58px;
+  }
+}

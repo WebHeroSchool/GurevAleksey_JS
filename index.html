@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/fonts/fonts.css">
+  <title>Найди баг</title>
+</head>
+<body>
+  <main id="main" class="container">
+    <section class="menu " id="menu">
+      <h1 class="menu__title">Выберите уровень сложности:</h1>
+      <p class="menu__description">Выберите сложность и игра начнется. Чем выше уровень - тем больше будет выборка карт. </p>
+      <ul class="menu-list">
+        <li class="menu-list__item" id="easy">
+          <p>Простой</p>
+        </li>
+        <li class="menu-list__item" id="medium">
+          <p>Средний</p>
+        </li>
+        <li class="menu-list__item" id="hard">
+          <p>Сложный</p>
+        </li>
+      </ul>
+      <button class="button" id="startGame">Начать игру</button>
+      <figure class="menu-img">
+        <img class="menu-img__card-one" src="/img/Карта 1.1-low.png" alt="карта рубашкой вверх">
+        <img class="menu-img__card-two" src="/img/Карта 2 (ховер).1-low.png" alt="карта рубашкой вверх">
+      </figure>
+    </section>
+
+    <section id="cotainerGame">
+      <div id="game">
+      </div> 
+    </section>
+  </main> 
+  <script src="/js/script.js"></script>
+</body>
+</html>
